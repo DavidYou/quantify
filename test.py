@@ -36,17 +36,26 @@ tickers = [
     {'ticker': '512400.SS', 'name': '有色金属'},  #0.3
     {'ticker': '512710.SS', 'name': '军工龙头'},  #0.4
     {'ticker': '159813.SZ', 'name': '国证芯片'},
-    {'ticker': '163406.SZ', 'name': 'xqhr'},
-    {'ticker': '600438.SS', 'name': 'twgf'},
-    {'ticker': '300274.SZ', 'name': 'ygdy'},
+    {'ticker': '159699.SZ', 'name': '港股消费'},
+    {'ticker': '163406.SZ', 'name': '兴全合润'},
+    {'ticker': '600438.SS', 'name': '通威股份'},
+    {'ticker': '300274.SZ', 'name': '阳光电源'},
 ]
 
+#5分钟数据，最近5个交易日汇总
 def getData2(t):
-    stock_zh_a_spot_df = ak.stock_zh_a_minute(symbol=t, period='15', adjust='qfq')
+    if (t.find('SZ') != -1):
+        t = 'sz' + t
+    else:
+        t = 'sh' + t
+    t = t.replace('.SZ', '')
+    t = t.replace('.SS', '')
+
+    stock_zh_a_spot_df = ak.stock_zh_a_minute(symbol=t, period='5', adjust='qfq')
     print(stock_zh_a_spot_df.tail(5))
     stock_zh_a_spot_df['Return'] = stock_zh_a_spot_df['close'].astype(float).pct_change()
     volatility = np.std(stock_zh_a_spot_df['Return'].dropna())
-    annual_volatility = volatility * np.sqrt(252 * 6.5 * 4)
+    annual_volatility = volatility * np.sqrt(252 * 6.5 * 4 * 3)
     print(annual_volatility)
     return annual_volatility
 
