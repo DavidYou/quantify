@@ -37,6 +37,9 @@ tickers = [
     {'ticker': '512710.SS', 'name': '军工龙头'},  #0.4
     {'ticker': '159813.SZ', 'name': '国证芯片'},
     {'ticker': '159699.SZ', 'name': '港股消费'},
+    {'ticker': '515220.SS', 'name': '中证煤炭'},
+    {'ticker': '512880.SS', 'name': '全指证券'},
+    {'ticker': '513360.SS', 'name': '中国教育'},
     {'ticker': '163406.SZ', 'name': '兴全合润'},
     {'ticker': '600438.SS', 'name': '通威股份'},
     {'ticker': '300274.SZ', 'name': '阳光电源'},
@@ -76,7 +79,7 @@ def getData(t):
 
 for tt in tickers:
 #    tt['volatility'] = getData(tt.get('ticker'))
-    tt['volatility'] = getData2(tt.get('ticker'))
+    tt['volatility'] = getData2(tt.get('ticker')) * 20000
 
 sorted_dict = sorted(tickers, key=lambda x : x['volatility'])
 
