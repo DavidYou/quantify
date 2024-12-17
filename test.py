@@ -1,12 +1,8 @@
 from datetime import datetime, timedelta
 import akshare as ak
-from operator import itemgetter
 
-import matplotlib.pyplot as plt
 import numpy as np
 import yfinance as yf
-from akshare import volatility_yz_rv
-from arch import arch_model
 
 tickers = [
     {'ticker': '159851.SZ', 'name': '金融科技'},  #0.6
