@@ -51,10 +51,11 @@ def getData2(t):
     t = t.replace('.SS', '')
 
     stock_zh_a_spot_df = ak.stock_zh_a_minute(symbol=t, period='5', adjust='qfq')
+    print(stock_zh_a_spot_df.head(5))
     print(stock_zh_a_spot_df.tail(5))
     stock_zh_a_spot_df['Return'] = stock_zh_a_spot_df['close'].astype(float).pct_change()
     volatility = np.std(stock_zh_a_spot_df['Return'].dropna())
-    annual_volatility = volatility * np.sqrt(252 * 6.5 * 4 * 3)
+    annual_volatility = volatility * np.sqrt(252 * 4.5 * 4 * 3)
     print(annual_volatility)
     return annual_volatility
 
@@ -68,7 +69,7 @@ def getData(t):
 
     data['Return'] = data['Adj Close'].pct_change()
     volatility = np.std(data['Return'].dropna())
-    annual_volatility = volatility * np.sqrt(252 * 6.5 * 4)
+    annual_volatility = volatility * np.sqrt(252 * 4.5 * 4)
 #    print(f" volatility: {annual_volatility}")
     return annual_volatility
 
