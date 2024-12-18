@@ -37,8 +37,8 @@ tickers = [
     {'ticker': '512880.SS', 'name': '全指证券'},
     {'ticker': '513360.SS', 'name': '中国教育'},
     {'ticker': '163406.SZ', 'name': '兴全合润'},
-    {'ticker': '600438.SS', 'name': '通威股份'},
     {'ticker': '300274.SZ', 'name': '阳光电源'},
+    {'ticker': '600438.SS', 'name': '通威股份'},
 ]
 
 #5分钟数据，最近5个交易日汇总
@@ -51,8 +51,8 @@ def getData2(t):
     t = t.replace('.SS', '')
 
     stock_zh_a_spot_df = ak.stock_zh_a_minute(symbol=t, period='5', adjust='qfq')
-    print(stock_zh_a_spot_df.head(5))
-    print(stock_zh_a_spot_df.tail(5))
+    print(stock_zh_a_spot_df.head(1))
+    print(stock_zh_a_spot_df.tail(1))
     stock_zh_a_spot_df['Return'] = stock_zh_a_spot_df['close'].astype(float).pct_change()
     volatility = np.std(stock_zh_a_spot_df['Return'].dropna())
     annual_volatility = volatility * np.sqrt(252 * 4.5 * 4 * 3)
