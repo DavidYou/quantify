@@ -7,6 +7,7 @@ import pandas as pd
 
 tickers = [
     {'ticker': '510050.SS', 'name': '上证50'},    #0.2~0.3
+    {'ticker': '159601.SZ', 'name': 'A50'},    #0.2~0.3
 #    {'ticker': '510300.SS', 'name': '沪深300'},
 #    {'ticker': '159628.SZ', 'name': '国证2000'},
     {'ticker': '159948.SZ', 'name': '创业板'},   #0.3
