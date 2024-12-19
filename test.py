@@ -1,9 +1,11 @@
+import json
 from datetime import datetime, timedelta
 import akshare as ak
 
 import numpy as np
 import yfinance as yf
 import pandas as pd
+from prettytable import PrettyTable
 
 tickers = [
     {'ticker': '510050.SS', 'name': '上证50'},    #0.2~0.3
@@ -96,6 +98,11 @@ for tt in tickers:
 
 sorted_dict = sorted(tickers, key=lambda x : x['volatility'])
 
+table = PrettyTable()
+table.field_names = ["Code", "Name", "5", "10", "20"]
+
 # 输出排序后的字典
 for tt in sorted_dict:
-    print(tt)
+    table.add_row([tt['ticker'], tt['name'], tt['volatility'] / 2, tt['volatility'], tt['volatility'] * 2])
+
+print(table)
