@@ -3,6 +3,7 @@ import akshare as ak
 
 import numpy as np
 import yfinance as yf
+import pandas as pd
 
 tickers = [
     {'ticker': '159851.SZ', 'name': '金融科技'},  #0.6
@@ -36,7 +37,9 @@ tickers = [
     {'ticker': '515220.SS', 'name': '中证煤炭'},
     {'ticker': '512880.SS', 'name': '全指证券'},
     {'ticker': '513360.SS', 'name': '中国教育'},
+    {'ticker': '512010.SS', 'name': '300医药'},
     {'ticker': '163406.SZ', 'name': '兴全合润'},
+    {'ticker': '159837.SZ', 'name': '生物科技'},
     {'ticker': '300274.SZ', 'name': '阳光电源'},
     {'ticker': '600438.SS', 'name': '通威股份'},
 ]
@@ -51,8 +54,10 @@ def getData2(t):
     t = t.replace('.SS', '')
 
     stock_zh_a_spot_df = ak.stock_zh_a_minute(symbol=t, period='5', adjust='qfq')
-    print(stock_zh_a_spot_df.head(1))
-    print(stock_zh_a_spot_df.tail(1))
+    pd.set_option("display.max_columns", None)
+    pd.set_option("display.max_rows", None)
+    print(stock_zh_a_spot_df.head(5))
+    print(stock_zh_a_spot_df.tail(5))
     stock_zh_a_spot_df['Return'] = stock_zh_a_spot_df['close'].astype(float).pct_change()
     volatility = np.std(stock_zh_a_spot_df['Return'].dropna())
     annual_volatility = volatility * np.sqrt(252 * 4.5 * 4 * 3)
