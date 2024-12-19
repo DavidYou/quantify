@@ -1,10 +1,12 @@
-import json
 from datetime import datetime, timedelta
-import akshare as ak
 
+import akshare as ak
 import numpy as np
-import yfinance as yf
 import pandas as pd
+import yfinance as yf
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
 from prettytable import PrettyTable
 
 tickers = [
@@ -94,7 +96,7 @@ def getData(t):
 
 for tt in tickers:
 #    tt['volatility'] = getData(tt.get('ticker'))
-    tt['volatility'] = getData2(tt.get('ticker')) * 20000
+    tt['volatility'] = int(getData2(tt.get('ticker')) * 20000)
 
 sorted_dict = sorted(tickers, key=lambda x : x['volatility'])
 
@@ -104,5 +106,25 @@ table.field_names = ["Code", "Name", "5", "10", "20"]
 # 输出排序后的字典
 for tt in sorted_dict:
     table.add_row([tt['ticker'], tt['name'], tt['volatility'] / 2, tt['volatility'], tt['volatility'] * 2])
+
+# 将PrettyTable转换成字符串
+table_str = str(table)
+
+# 设置图片大小，需要足够大以容纳文本
+image_width = 500
+image_height = 1000
+
+# 创建一个新的白色图片
+image = Image.new('RGB', (image_width, image_height), color='white')
+font = ImageFont.truetype('STHeiti Light.ttc', 18)
+draw = ImageDraw.Draw(image)
+
+y = 5
+for line in table_str.splitlines():
+    draw.text((5, y), line, font=font, fill=(0, 0, 0))
+    y += 20  # 15是行高，根据字体大小调整
+
+# 保存图片
+image.save('table.png')
 
 print(table)
