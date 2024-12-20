@@ -98,7 +98,8 @@ for tt in tickers:
 #    tt['volatility'] = getData(tt.get('ticker'))
     tt['volatility'] = int(getData2(tt.get('ticker')) * 20000)
 
-sorted_dict = sorted(tickers, key=lambda x : x['volatility'])
+#sorted_dict = sorted(tickers, key=lambda x : x['volatility'])
+sorted_dict = tickers
 
 table = PrettyTable()
 table.field_names = ["Code", "Name", "5", "10", "20"]
