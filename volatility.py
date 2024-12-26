@@ -14,7 +14,7 @@ tickers = [
     {'ticker': '159601.SZ', 'name': 'A50'},    #0.2~0.3
     {'ticker': '163406.SZ', 'name': '兴全合润'},
 #    {'ticker': '510300.SS', 'name': '沪深300'},
-#    {'ticker': '159628.SZ', 'name': '国证2000'},
+    {'ticker': '563300.SS', 'name': '中证2000'},
     {'ticker': '159948.SZ', 'name': '创业板'},   #0.3
 
     {'ticker': '159847.SZ', 'name': '中证医疗'},  #0.3
