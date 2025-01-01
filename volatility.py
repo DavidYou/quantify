@@ -10,52 +10,52 @@ from PIL import ImageFont
 from prettytable import PrettyTable
 
 tickers = [
-    {'ticker': '510050.SS', 'name': '上证50'},    #0.2~0.3
-    {'ticker': '159601.SZ', 'name': 'A50'},    #0.2~0.3
+    {'ticker': '510050.SS', 'name': '上证50'},
+    {'ticker': '159595.SZ', 'name': 'A50'},
     {'ticker': '163406.SZ', 'name': '兴全合润'},
 #    {'ticker': '510300.SS', 'name': '沪深300'},
     {'ticker': '563300.SS', 'name': '中证2000'},
-    {'ticker': '159948.SZ', 'name': '创业板'},   #0.3
+    {'ticker': '159915.SZ', 'name': '创业板'},
 
-    {'ticker': '159847.SZ', 'name': '中证医疗'},  #0.3
+    {'ticker': '512170.SS', 'name': '中证医疗'},
     {'ticker': '159837.SZ', 'name': '生物科技'},
     {'ticker': '512010.SS', 'name': '300医药'},
-    {'ticker': '159928.SZ', 'name': '中证消费'},  #0.3
+    {'ticker': '159928.SZ', 'name': '中证消费'},
 
     {'ticker': '512880.SS', 'name': '全指证券'},
 
-    {'ticker': '513280.SS', 'name': '港股医药'},  #0.3
+    {'ticker': '159892.SZ', 'name': '港股医药'},
     {'ticker': '159699.SZ', 'name': '港股消费'},
-    {'ticker': '513130.SS', 'name': '恒生科技'},  #0.3
+    {'ticker': '513130.SS', 'name': '恒生科技'},
 
-    {'ticker': '512660.SS', 'name': '中证军工'},  #0.4~0.5
-    {'ticker': '512710.SS', 'name': '军工龙头'},  #0.4
+    {'ticker': '512660.SS', 'name': '中证军工'},
+    {'ticker': '512710.SS', 'name': '军工龙头'},
 
-    {'ticker': '515700.SS', 'name': '新能车'},    #0.4
-    {'ticker': '159857.SZ', 'name': '光伏产业'}, #0.4~0.5
+    {'ticker': '515700.SS', 'name': '新能车'},
+    {'ticker': '515790.SS', 'name': '光伏产业'},
 
-    {'ticker': '159851.SZ', 'name': '金融科技'},  #0.6
-    {'ticker': '159899.SZ', 'name': '软件指数'},  #0.4~0.5
-    {'ticker': '562590.SS', 'name': '消费电子'},
-    {'ticker': '515880.SS', 'name': '通信设备'},  #0.4
-    {'ticker': '516510.SS', 'name': '云计算'},    #0.5
-    {'ticker': '159813.SZ', 'name': '国证芯片'},
+    {'ticker': '159851.SZ', 'name': '金融科技'},
+    {'ticker': '515230.SS', 'name': '软件指数'},
+    {'ticker': '159732.SZ', 'name': '消费电子'},
+    {'ticker': '515880.SS', 'name': '通信设备'},
+    {'ticker': '516510.SS', 'name': '云计算'},
+    {'ticker': '159995.SZ', 'name': '国证芯片'},
 
-    {'ticker': '588290.SS', 'name': '科创芯片'}, #0.6
-    {'ticker': '588830.SS', 'name': '科创新能源'}, #0.5~0.6
-    {'ticker': '588680.SS', 'name': '科创医药'},  #0.5
-    {'ticker': '588010.SS', 'name': '科创材料'}, #0.5
-    {'ticker': '588260.SS', 'name': '科创信息技术'},
-    {'ticker': '588210.SS', 'name': '科创100'},  #0.5
+    {'ticker': '588200.SS', 'name': '科创芯片'},
+    {'ticker': '588830.SS', 'name': '科创新能源'},
+    {'ticker': '588860.SS', 'name': '科创医药'},
+    {'ticker': '588010.SS', 'name': '科创材料'},
+    {'ticker': '588100.SS', 'name': '科创信息技术'},
+    {'ticker': '588030.SS', 'name': '科创100'},
 
-#    {'ticker': '512400.SS', 'name': '有色金属'},  #0.3
+#    {'ticker': '512400.SS', 'name': '有色金属'},
 #    {'ticker': '515220.SS', 'name': '中证煤炭'},
-#    {'ticker': '159667.SZ', 'name': '中证机床'},  #0.3~0.4
+#    {'ticker': '159667.SZ', 'name': '中证机床'},
 
 #    {'ticker': '513360.SS', 'name': '中国教育'},
-    {'ticker': '516770.SS', 'name': '动漫游戏'}, #0.5
-    {'ticker': '159855.SZ', 'name': '中证影视'},  #0.4
-    {'ticker': '159805.SZ', 'name': '中证传媒'},   #0.4~0.5
+    {'ticker': '159869.SZ', 'name': '动漫游戏'},
+    {'ticker': '159855.SZ', 'name': '中证影视'},
+    {'ticker': '512980.SS', 'name': '中证传媒'},
 
     {'ticker': '300274.SZ', 'name': '阳光电源'},
     {'ticker': '600438.SS', 'name': '通威股份'},
