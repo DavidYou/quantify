@@ -104,11 +104,11 @@ for tt in tickers:
 sorted_dict = tickers
 
 table = PrettyTable()
-table.field_names = ["Code", "Name", "5", "10", "20"]
+table.field_names = ["Code", "Name", "10", "20"]
 
 # 输出排序后的字典
 for tt in sorted_dict:
-    table.add_row([tt['ticker'], tt['name'], tt['volatility'] / 2, tt['volatility'], tt['volatility'] * 2])
+    table.add_row([tt['ticker'], tt['name'], tt['volatility'], tt['volatility'] * 2])
 
 # 将PrettyTable转换成字符串
 table_str = str(table)
