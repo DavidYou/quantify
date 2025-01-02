@@ -98,7 +98,7 @@ def getData(t):
 
 for tt in tickers:
 #    tt['volatility'] = getData(tt.get('ticker'))
-    tt['volatility'] = int(getData2(tt.get('ticker')) * 20000 * 1.25)
+    tt['volatility'] = int(getData2(tt.get('ticker')) * 20000)
 
 #sorted_dict = sorted(tickers, key=lambda x : x['volatility'])
 sorted_dict = tickers
