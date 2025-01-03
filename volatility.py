@@ -91,7 +91,7 @@ def getData(t):
 
     data['Return'] = data['Adj Close'].pct_change()
     volatility = np.std(data['Return'].dropna())
-    annual_volatility = volatility * np.sqrt(252 * 4.5 * 4)
+    annual_volatility = volatility * np.sqrt(252 * 4 * 12)
 #    print(f" volatility: {annual_volatility}")
     return annual_volatility
 
